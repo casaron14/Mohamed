@@ -1,0 +1,157 @@
+:root {
+  --bg-color: #0f0f0f;
+  --text-color: #ffffff;
+  --accent-color: #00ffe7;
+  --card-bg: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(15, 15, 15, 0.95)), url('Mohamed.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  padding: 40px 20px;
+  margin-bottom: 0;
+}
+
+h1, p {
+  position: relative;
+  z-index: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.5s;
+}
+
+.section {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.interactive-about {
+  text-align: center;
+}
+
+.interactive-about .about-card {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  cursor: pointer;
+  margin: auto;
+  max-width: 600px;
+  text-align: left; /* Change to center if you want all text centered */
+}
+
+.interactive-about .about-card:hover {
+  transform: scale(1.02);
+  background-color: #222222;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer .socials a {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  min-width: 120px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1 1 120px; /* responsive equal sizing */
+  max-width: 180px;
+}
+
+.footer .socials a:hover {
+  background-color: #ffffff;
+  color: var(--bg-color);
+}
+
+
+.footer .socials a:hover {
+  color: #ffffff;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 42% 58% 33% 67% / 47% 39% 61% 53%;
+  }
+  50% {
+    border-radius: 58% 42% 61% 39% / 33% 67% 47% 53%;
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
