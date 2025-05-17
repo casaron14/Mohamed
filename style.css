@@ -30,8 +30,8 @@ body {
   overflow: hidden;
 }
 .hero-img {
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   border-radius: 100%;
   border: 1px solid var(--accent-color);
